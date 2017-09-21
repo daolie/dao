@@ -1,1 +1,1 @@
-# dao is a simple php framework made by daolie
+# dao is a simple php framework created by daolie
