@@ -2,11 +2,15 @@
 	"require": {
        "predis/predis": "*",
        "noahbuscher/macaw": "dev-master",
-		"catfan/Medoo": "^1.4"
+		"catfan/Medoo": "^1.4",
+		"filp/whoops": "^2.1"
     },
     "autoload": {
         "psr-4": {
-            "app\\": "app/"
+          "app\\": "app/",
+          "vendor\\": "vendor/",
+          "lib\\": "lib/",
+          "components\\": "components/"
         }
     }
 }

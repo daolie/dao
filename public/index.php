@@ -4,6 +4,11 @@ require_once dirname(__DIR__).DIRECTORY_SEPARATOR.'path.php';
 
 require VENDOR_PATH.D_S.'autoload.php';
 
-require_once VENDOR_PATH.D_S.'core'.D_S.'Router.php';
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
+$config = require_once APP_PATH.D_S.'config'.D_S.'config.php';
 
-Router::run();
+$application = new \vendor\dao\Application($config);
+
+$application->run();
