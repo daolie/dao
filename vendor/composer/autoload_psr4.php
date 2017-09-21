@@ -9,4 +9,5 @@ return array(
     'app\\' => array($baseDir . '/app'),
     'Predis\\' => array($vendorDir . '/predis/predis/src'),
     'NoahBuscher\\Macaw\\' => array($vendorDir . '/noahbuscher/macaw'),
+    'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
 );

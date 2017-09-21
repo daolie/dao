@@ -19,6 +19,10 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         array (
             'NoahBuscher\\Macaw\\' => 18,
         ),
+        'M' => 
+        array (
+            'Medoo\\' => 6,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -33,6 +37,10 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         'NoahBuscher\\Macaw\\' => 
         array (
             0 => __DIR__ . '/..' . '/noahbuscher/macaw',
+        ),
+        'Medoo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/catfan/medoo/src',
         ),
     );
 
