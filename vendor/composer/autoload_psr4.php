@@ -7,7 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'vendor\\' => array($vendorDir . ''),
+    'tests\\' => array($baseDir . '/tests'),
     'lib\\' => array($baseDir . '/lib'),
+    'console\\' => array($baseDir . '/console'),
     'components\\' => array($baseDir . '/components'),
     'app\\' => array($baseDir . '/app'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
@@ -15,4 +17,5 @@ return array(
     'Predis\\' => array($vendorDir . '/predis/predis/src'),
     'NoahBuscher\\Macaw\\' => array($vendorDir . '/noahbuscher/macaw'),
     'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
+    'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
 );

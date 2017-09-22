@@ -6,10 +6,18 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
 {
+    public static $files = array (
+        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'v' => 
         array (
             'vendor\\' => 7,
+        ),
+        't' => 
+        array (
+            'tests\\' => 6,
         ),
         'l' => 
         array (
@@ -17,6 +25,7 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         ),
         'c' => 
         array (
+            'console\\' => 8,
             'components\\' => 11,
         ),
         'a' => 
@@ -40,6 +49,10 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         array (
             'Medoo\\' => 6,
         ),
+        'F' => 
+        array (
+            'FastRoute\\' => 10,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -47,9 +60,17 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         array (
             0 => 'D:\\wamp\\www\\daolie\\vendor',
         ),
+        'tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
         'lib\\' => 
         array (
             0 => __DIR__ . '/../..' . '/lib',
+        ),
+        'console\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/console',
         ),
         'components\\' => 
         array (
@@ -78,6 +99,10 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         'Medoo\\' => 
         array (
             0 => __DIR__ . '/..' . '/catfan/medoo/src',
+        ),
+        'FastRoute\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
     );
 

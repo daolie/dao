@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+defined('DEBUG') or define('DEBUG', true);
+defined('ENV') or define('ENV', 'dev');
+
+DEBUG ? error_reporting(E_ALL) : error_reporting(0);
+
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'path.php';
+
+require(__DIR__ . D_S . 'vendor' . D_S . 'autoload.php');
+
+$config = require_once __DIR__ . D_S . 'console' . D_S . 'config' . D_S . 'config.php';
+
+$application = new \vendor\dao\console\Application($config);
+
+$application->run();

@@ -125,7 +125,8 @@ class Macaw {
 
               // Fix multi parameters
               if (!method_exists($controller, $segments[1])) {
-                echo "controller and action not found";
+                  self::exception('controller and action not found');
+                 //echo "controller and action not found";
               } else {
                 call_user_func_array(array($controller, $segments[1]), $matched);
               }
@@ -146,8 +147,9 @@ class Macaw {
     if ($found_route == false) {
       if (!self::$error_callback) {
         self::$error_callback = function() {
-          header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");
-          echo '404';
+            self::exception('404 : Page Not Fount !');
+          /*header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");
+          echo '404';*/
         };
       } else {
         if (is_string(self::$error_callback)) {
@@ -159,5 +161,9 @@ class Macaw {
       }
       call_user_func(self::$error_callback);
     }
+  }
+  
+  public static function exception($msg){
+      throw new \Exception($msg);
   }
 }

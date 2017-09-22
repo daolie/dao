@@ -9,6 +9,6 @@ $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 $config = require_once APP_PATH.D_S.'config'.D_S.'config.php';
 
-$application = new \vendor\dao\Application($config);
+$application = new \vendor\dao\web\Application($config);
 
 $application->run();

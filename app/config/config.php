@@ -1,6 +1,10 @@
 <?php
-$router = require_once APP_PATH. D_S . 'config' . D_S . 'Router.php';
+$router = require_once APP_PATH. D_S . 'config' . D_S . 'router.php';
+$db = require_once APP_PATH. D_S . 'config' . D_S . 'db.php';
 
 return [
-    'routers' => $router
+    'defoultController' => 'site',
+    'defoultAction' => 'index',
+    'routers' => $router,
+    'db' => $db,
 ];

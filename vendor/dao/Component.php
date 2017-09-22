@@ -9,6 +9,4 @@ class Component extends Object{
         
     }
     
-    
-    
 }
