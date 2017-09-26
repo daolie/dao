@@ -8,6 +8,7 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
 {
     public static $files = array (
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -52,6 +53,10 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         'F' => 
         array (
             'FastRoute\\' => 10,
+        ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
         ),
     );
 
@@ -104,6 +109,20 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -111,6 +130,7 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

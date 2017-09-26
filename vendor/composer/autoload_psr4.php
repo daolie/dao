@@ -18,4 +18,5 @@ return array(
     'NoahBuscher\\Macaw\\' => array($vendorDir . '/noahbuscher/macaw'),
     'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
+    'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/EmailValidator'),
 );
