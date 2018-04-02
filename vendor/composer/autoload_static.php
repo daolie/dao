@@ -56,16 +56,12 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         array (
             'FastRoute\\' => 10,
         ),
-        'E' => 
-        array (
-            'Egulias\\EmailValidator\\' => 23,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'vendor\\' => 
         array (
-            0 => 'D:\\wamp\\www\\daolie\\vendor',
+            0 => 'D:\\project\\dao\\vendor',
         ),
         'tests\\' => 
         array (
@@ -119,20 +115,6 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
-        'Egulias\\EmailValidator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'D' => 
-        array (
-            'Doctrine\\Common\\Lexer\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
-            ),
-        ),
     );
 
     public static $classMap = array (
@@ -144,7 +126,6 @@ class ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit0dd60ec3674ff4c3ab3ea3e980f719c7::$classMap;
 
         }, null, ClassLoader::class);

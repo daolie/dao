@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'vendor\\' => array($vendorDir . ''),
+    'vendor\\' => array($vendorDir),
     'tests\\' => array($baseDir . '/tests'),
     'lib\\' => array($baseDir . '/lib'),
     'console\\' => array($baseDir . '/console'),
@@ -20,5 +20,4 @@ return array(
     'NoahBuscher\\Macaw\\' => array($vendorDir . '/noahbuscher/macaw'),
     'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
-    'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/EmailValidator'),
 );
