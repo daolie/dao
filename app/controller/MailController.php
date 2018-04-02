@@ -16,7 +16,7 @@ class MailController{
         $mailer = new \Swift_Mailer($transport);
         $path = 'D:\Desktop\test\test.doc';
         // Create a message
-        $message = (new \Swift_Message('截图服务字体'))
+        $message = (new \Swift_Message(''))
             ->setFrom(['' => 'test'])
             ->setTo(['' => 'test'])
            // ->attach(\Swift_Attachment::fromPath($path)->setFilename($filename))

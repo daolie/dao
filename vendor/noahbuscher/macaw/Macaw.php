@@ -15,6 +15,7 @@ class Macaw {
   public static $routes = array();
   public static $methods = array();
   public static $callbacks = array();
+  public static $maps = array();
   public static $patterns = array(
       ':any' => '[^/]+',
       ':num' => '[0-9]+',
@@ -26,9 +27,18 @@ class Macaw {
    * Defines a route w/ callback and method
    */
   public static function __callstatic($method, $params) {
-    $uri = dirname($_SERVER['PHP_SELF']).'/'.$params[0];
-    $callback = $params[1];
 
+    if ($method == 'map') {
+        $maps = array_map('strtoupper', $params[0]);
+        $uri = strpos($params[1], '/') === 0 ? $params[1] : '/' . $params[1];
+        $callback = $params[2];
+    } else {
+        $maps = null;
+        $uri = strpos($params[0], '/') === 0 ? $params[0] : '/' . $params[0];
+        $callback = $params[1];
+    }
+
+    array_push(self::$maps, $maps);
     array_push(self::$routes, $uri);
     array_push(self::$methods, strtoupper($method));
     array_push(self::$callbacks, $callback);
@@ -63,8 +73,9 @@ class Macaw {
     if (in_array($uri, self::$routes)) {
       $route_pos = array_keys(self::$routes, $uri);
       foreach ($route_pos as $route) {
+
         // Using an ANY option to match both GET and POST requests
-        if (self::$methods[$route] == $method || self::$methods[$route] == 'ANY') {
+        if (self::$methods[$route] == $method || self::$methods[$route] == 'ANY' || in_array($method, self::$maps[$route])) {
           $found_route = true;
 
           // If route is not an object
@@ -103,7 +114,7 @@ class Macaw {
         }
 
         if (preg_match('#^' . $route . '$#', $uri, $matched)) {
-          if (self::$methods[$pos] == $method || self::$methods[$pos] == 'ANY') {
+          if (self::$methods[$pos] == $method || self::$methods[$pos] == 'ANY' || (!empty(self::$maps[$pos]) && in_array($method, self::$maps[$pos]))) {
             $found_route = true;
 
             // Remove $matched[0] as [1] is the first parameter.
@@ -125,8 +136,7 @@ class Macaw {
 
               // Fix multi parameters
               if (!method_exists($controller, $segments[1])) {
-                  self::exception('controller and action not found');
-                 //echo "controller and action not found";
+                echo "controller and action not found";
               } else {
                 call_user_func_array(array($controller, $segments[1]), $matched);
               }
@@ -147,9 +157,8 @@ class Macaw {
     if ($found_route == false) {
       if (!self::$error_callback) {
         self::$error_callback = function() {
-            self::exception('404 : Page Not Fount !');
-          /*header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");
-          echo '404';*/
+          header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");
+          echo '404';
         };
       } else {
         if (is_string(self::$error_callback)) {
@@ -161,9 +170,5 @@ class Macaw {
       }
       call_user_func(self::$error_callback);
     }
-  }
-  
-  public static function exception($msg){
-      throw new \Exception($msg);
   }
 }

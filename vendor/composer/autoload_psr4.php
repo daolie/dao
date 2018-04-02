@@ -15,6 +15,8 @@ return array(
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Predis\\' => array($vendorDir . '/predis/predis/src'),
+    'PhpOffice\\PhpPresentation\\' => array($vendorDir . '/phpoffice/phppresentation/src/PhpPresentation'),
+    'PhpOffice\\Common\\' => array($vendorDir . '/phpoffice/common/src/Common'),
     'NoahBuscher\\Macaw\\' => array($vendorDir . '/noahbuscher/macaw'),
     'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),

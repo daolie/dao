@@ -29,11 +29,11 @@ class Application extends Object{
             $this->action = $this->defoultAction;
         } else {
             if (!isset($router[$uri])) {
-                Macaw::exception('404 : Page Not Fount');
+                throw new \Exception('404 : Page Not Fount');
             }
             list($this->controller, $this->action) = explode('/', $router[$uri]['handle']);
             if (strtoupper($httpMethod) !== $router[$uri]['method']) {
-                Macaw::exception('request method should be ' . $router[$uri]['method']);
+                throw new \Exception('request method should be ' . $router[$uri]['method']);
             }
         }
         $handle = 'app\controller\\' . ucwords($this->controller) . 'Controller@Action' . ucfirst($this->action);

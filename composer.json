@@ -7,7 +7,8 @@
     "catfan/Medoo": "^1.4",
     "filp/whoops": "^2.1",
     "shuber/curl": "^1.0",
-    "swiftmailer/swiftmailer": "^6.0"
+    "swiftmailer/swiftmailer": "^6.0",
+    "phpoffice/phppresentation": "dev-master"
   },
   "autoload": {
     "psr-4": {
