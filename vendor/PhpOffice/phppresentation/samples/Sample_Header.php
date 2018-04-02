@@ -30,7 +30,8 @@ require_once dirname(dirname(dirname(__FILE__))).'/common/src/Common/Autoloader.
 \PhpOffice\Common\Autoloader::register();
 
 // Set writers
-$writers = array('PowerPoint2007' => 'pptx', 'ODPresentation' => 'odp');
+//$writers = array('PowerPoint2007' => 'pptx', 'ODPresentation' => 'odp');
+$writers = array('PowerPoint2007' => 'pptx');
 
 // Return to the caller script when runs by CLI
 if (CLI) {
